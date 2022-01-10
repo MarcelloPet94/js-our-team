@@ -33,33 +33,45 @@ const team = [
 ];
 
 // ELEMENTI DEL DOM
-// container cards
 const teamContainer = document.querySelector('.team-container');
-// elementi input
-let nameUtente = document.getElementById("name").value;
-let roleUtente = document.getElementById("role").value;
-let imageUtente = document.getElementById("image").value;
 const addMemberButton = document.getElementById("addMemberButton");
-//
 
 // aggiunge un membro del team
 addMemberButton.addEventListener('click' , function ()
 {
+  
+  let nameUtente = document.getElementById("name").value;
+  let roleUtente = document.getElementById("role").value;
+  let imageUtente = document.getElementById("image").value;
+
   let nuovoUtente = 
-  {
-    name : nameUtente,
-    role : roleUtente,
-    image : imageUtente,
-  } 
+    {
+      name : nameUtente,
+      role : roleUtente,
+      image : imageUtente,
+    } 
 
-  team.push(nuovoUtente);
+    team.push(nuovoUtente);
+    
+    teamContainer.innerHTML += `
+    <div class="team-card">
+      <div class="card-image">
+        <img
+          src="img/${nuovoUtente.image}"
+          alt="${nuovoUtente.name}"
+        />
+      </div>
+      <div class="card-text">
+        <h3>${nuovoUtente.name}</h3>
+        <p>${nuovoUtente.role}</p>
+      </div>
+    </div>
+    `
 });
-
 
 // stampa i singoli membri del team
 for (let x in team)
 {
-  console.log(team[x]);
   teamContainer.innerHTML += `
   <div class="team-card">
     <div class="card-image">
