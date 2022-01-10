@@ -57,8 +57,8 @@ for (let x in team)
       />
     </div>
     <div class="card-text">
-      <h3>Wayne Barnett</h3>
-      <p>Founder & CEO</p>
+      <h3>${team[x].name}</h3>
+      <p>${team[x].role}</p>
     </div>
   </div>
   `
