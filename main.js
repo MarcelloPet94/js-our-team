@@ -55,10 +55,11 @@ addMemberButton.addEventListener('click' , function ()
   team.push(nuovoUtente);
 });
 
+
 // stampa i singoli membri del team
 for (let x in team)
 {
-  console.log(team[6]);
+  console.log(team[x]);
   teamContainer.innerHTML += `
   <div class="team-card">
     <div class="card-image">
