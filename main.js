@@ -1,14 +1,4 @@
-/*
-genero un div da js (quanti?)
-> in base alla lunghezza degli oggetti presenti nell'array (ciclo)
 
-inserisco gli elementi dinamici in ogni punto
-dell'html dove dovranno essere stampati (come?)
-> ogni oggetto verrà richiamato con un valore numerico
-a questo si aggiungerà la chiave (uguale per tutti) dell'oggetto
-
- appendo il div dentro al contenitore
-*/ 
 const team = [
   {
     name: 'Wayne Barnett',
@@ -42,12 +32,33 @@ const team = [
   },
 ];
 
-
-// localizzo contenitore
+// ELEMENTI DEL DOM
+// container cards
 const teamContainer = document.querySelector('.team-container');
+// elementi input
+let nameUtente = document.getElementById("name").value;
+let roleUtente = document.getElementById("role").value;
+let imageUtente = document.getElementById("image").value;
+const addMemberButton = document.getElementById("addMemberButton");
+//
 
+// aggiunge un membro del team
+addMemberButton.addEventListener('click' , function ()
+{
+  let nuovoUtente = 
+  {
+    name : nameUtente,
+    role : roleUtente,
+    image : imageUtente,
+  } 
+
+  team.push(nuovoUtente);
+});
+
+// stampa i singoli membri del team
 for (let x in team)
 {
+  console.log(team[6]);
   teamContainer.innerHTML += `
   <div class="team-card">
     <div class="card-image">
